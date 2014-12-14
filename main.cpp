@@ -345,9 +345,9 @@ static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
 // TODO add .onion seed
-//  if (!fTestNet){
-//    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 8333), true);
-//  }
+  if (!fTestNet){
+    db.Add(CService("104.131.26.81", GetDefaultPort()), true);
+  }
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;
